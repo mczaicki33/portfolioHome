@@ -1,16 +1,15 @@
 
 import './App.css'
-import Home from "@/Home.tsx";
-import {ThemeProvider} from "@/components/theme/theme-provider.tsx";
+import RootLayout from "@/app/layout.tsx";
+import Home from "@/app/page.tsx";
 
 function App() {
 
   return (
     <>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Home/>
-      </ThemeProvider>
-
+      <RootLayout>
+          <Home/>
+      </RootLayout>
     </>
   )
 }
