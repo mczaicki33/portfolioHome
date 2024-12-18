@@ -78,7 +78,7 @@ export function AboutMe() {
             </CardHeader>
             <CardContent className="space-y-6">
                 <p className='font-semibold  leading-tight'>
-                    Hi, I'm Maciej, a passionate and versatile software developer with a strong foundation in
+                    Hi, I'm Maciej, a passionate and aspiring software developer with a strong foundation in
                     programming and web development.</p>
                 <p className='font-semibold  leading-tight'>I have a solid understanding of C# and JavaScript,
                     complemented by a growing proficiency in
@@ -91,7 +91,7 @@ export function AboutMe() {
                 </p>
                 <p className='font-semibold  leading-tight'>
                     I’m driven by a passion for learning and a commitment to delivering high-quality solutions. I thrive
-                    in collaborative environments where innovation and problem-solving are at the forefront. <br/>
+                    in environments where innovation and problem-solving are at the forefront. <br/>
                     Feel free to reach out to discuss how I can contribute to your projects or team!
                 </p>
                 <div>

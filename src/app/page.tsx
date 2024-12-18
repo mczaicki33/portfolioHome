@@ -6,6 +6,7 @@ import { AboutMe } from '@/components/about-me'
 import { ModeToggle } from '@/components/theme/mode-toggle'
 import { Projects } from '@/components/projects'
 import {ContactForm} from "@/components/contactForm.tsx";
+import ChangeLanguage from "@/components/ChangeLanguage.tsx";
 
 const sections = [
     { id: 'home', title: 'Home' },
@@ -92,6 +93,7 @@ export default function Home() {
                         <p className="text-xl">Full-stack Developer</p>
                         <div className="mt-8">
                             <ModeToggle/>
+                            <ChangeLanguage/>
                         </div>
                     </motion.div>
                 </section>
