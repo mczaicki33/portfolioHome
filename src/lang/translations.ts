@@ -1,0 +1,98 @@
+export const translations = {
+    en: {
+        home: {
+            title: 'Maciej Czaicki',
+            subtitle: 'Full-stack Developer',
+        },
+        nav: {
+            home: 'Home',
+            projects: 'Projects',
+            about: 'About',
+            contact: 'Contact',
+        },
+        about: {
+            title: 'About me',
+            intro: [
+                "Hi, I'm Maciej, a passionate and aspiring software developer with a strong foundation in programming and web development.",
+                "I have a solid understanding of C# and JavaScript, complemented by a growing proficiency in TypeScript. My journey with PHP and Java has further expanded my ability to adapt to diverse development environments and challenges.",
+                "I'm experienced in working with ASP.NET Core and React, enabling me to deliver full-stack applications with seamless functionality and an intuitive user experience.",
+                "I’m driven by a passion for learning and a commitment to delivering high-quality solutions. I thrive in environments where innovation and problem-solving are at the forefront.",
+                "Feel free to reach out to discuss how I can contribute to your projects or team!"
+            ],
+            skills: "Skills",
+            languages: "Languages",
+            polish: "Polish",
+            english: "English",
+            links: "Links",
+            cv: "CV",
+            download: "Download",
+            redirect: "Redirect",
+        },
+        projects: {
+            title: 'Projects',
+            goToProject: 'Go to project',
+            carRental:'Car Rental',
+            onlineShop:'Online Shop',
+            socialMediaPlatform:'Social Media Platform',
+        },
+        contact: {
+            title: 'Contact Me',
+            description: "Send me a message and I'll get back to you as soon as possible.",
+            name: 'Name',
+            email: 'Email',
+            message: 'Message',
+            send: 'Send Message',
+            sending: 'Sending...',
+            success: 'Message sent successfully!',
+            error: 'Message could not be sent!',
+        },
+    },
+    pl: {
+        home: {
+            title: 'Maciej Czaicki',
+            subtitle: 'Full-stack Developer',
+        },
+        nav: {
+            home: 'Strona główna',
+            projects: 'Projekty',
+            about: 'O mnie',
+            contact: 'Kontakt',
+        },
+        about: {
+            title: 'O mnie',
+            intro: [
+                "Cześć, nazywam Maciej. Jestem ambitnym programista z pasją. Zajmuję się tworzeniem oprogramowania i aplikacji internetowych.",
+                "Najlepiej czuję się, pracując z C# i JavaScript, a dodatkowo rozwijam swoje umiejętności w TypeScript. Praca z PHP i Java pozwoliła mi lepiej zrozumieć różnorodne środowiska programistyczne i dostosowywać się do nowych wyzwań.",
+                "Na co dzień tworzę aplikacje full-stack, wykorzystując ASP.NET Core i React. Stawiam na intuicyjne interfejsy oraz płynną, niezawodną funkcjonalność, aby usatysfakcjonować potrzeby użytkowników.",
+                "Uwielbiam zdobywać nową wiedzę i podchodzić do każdego projektu z zaangażowaniem, dążąc do najwyższej jakości. Najlepiej odnajduję się tam, gdzie liczy się kreatywność i rozwiązywanie problemów.",
+                "Jeśli szukasz osoby, która wniesie wartość do Twojego zespołu lub projektu, śmiało się ze mną skontaktuj!",
+            ],
+            skills: "Umiejętności",
+            languages: "Języki",
+            polish:"Polski",
+            english: "Angielski",
+            links: "Linki",
+            cv: "CV",
+            download: "Pobierz",
+            redirect: "Przekieruj",
+        },
+        projects: {
+            title: 'Projekty',
+            goToProject: 'Przejdź do projektu',
+            carRental:'Wypożyczalnia samochodów',
+            onlineShop:'Sklep Internetowy',
+            socialMediaPlatform:'Platforma Społecznościowa'
+        },
+        contact: {
+            title: 'Skontaktuj się ze mną',
+            description: "Wyślij mi wiadomość, a odpowiem tak szybko, jak to możliwe.",
+            name: 'Imię',
+            email: 'Email',
+            message: 'Wiadomość',
+            send: 'Wyślij wiadomość',
+            sending: 'Wysyłanie...',
+            success: 'Wiadomość wysłana pomyślnie!',
+            error: 'Nie udało się wysłać wiadomości!',
+        },
+    },
+};

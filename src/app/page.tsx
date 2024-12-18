@@ -5,19 +5,18 @@ import { motion, useScroll, useSpring } from 'framer-motion'
 import { AboutMe } from '@/components/about-me'
 import { ModeToggle } from '@/components/theme/mode-toggle'
 import { Projects } from '@/components/projects'
-import {ContactForm} from "@/components/contactForm.tsx";
-import ChangeLanguage from "@/components/ChangeLanguage.tsx";
+import { ContactForm } from "@/components/contactForm"
+import ChangeLanguage from "@/components/ChangeLanguage"
+import { useLanguage } from "@/lang/LanguageContext"
+import { translations } from "@/lang/translations"
 
-const sections = [
-    { id: 'home', title: 'Home' },
-    { id: 'projects', title: 'Projects' },
-    { id: 'about', title: 'About' },
-    { id: 'contact', title: 'Contact' },
-];
+const sections = ['home', 'projects', 'about', 'contact'] as const;
 
 export default function Home() {
     const [activeSection, setActiveSection] = useState<string>('home')
     const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
+    const { language } = useLanguage();
+    const t = translations[language];
 
     const { scrollYProgress } = useScroll()
     const scaleX = useSpring(scrollYProgress, {
@@ -31,11 +30,11 @@ export default function Home() {
             const scrollPosition = window.scrollY + window.innerHeight / 2
 
             for (const section of sections) {
-                const element = sectionRefs.current[section.id]
+                const element = sectionRefs.current[section]
                 if (element) {
                     const { offsetTop, offsetHeight } = element
                     if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section.id)
+                        setActiveSection(section)
                         break
                     }
                 }
@@ -63,14 +62,14 @@ export default function Home() {
                 <nav className="container mx-auto py-4">
                     <ul className="flex justify-center space-x-4">
                         {sections.map((section) => (
-                            <li key={section.id}>
+                            <li key={section}>
                                 <button
-                                    onClick={() => scrollToSection(section.id)}
+                                    onClick={() => scrollToSection(section)}
                                     className={`text-lg font-medium transition-colors ${
-                                        activeSection === section.id ? 'text-primary' : 'text-foreground hover:text-primary/80'
+                                        activeSection === section ? 'text-primary' : 'text-foreground hover:text-primary/80'
                                     }`}
                                 >
-                                    {section.title}
+                                    {t.nav[section]}
                                 </button>
                             </li>
                         ))}
@@ -86,11 +85,12 @@ export default function Home() {
                     <motion.div
                         initial={{opacity: 0, y: 50}}
                         animate={{opacity: 1, y: 0}}
-                        transition={{duration: 0.8}}
+                        transition={{duration: 1}}
+                        viewport={{once: false}}
                         className="text-center"
                     >
-                        <h1 className="text-4xl font-bold text-primary mb-4">Maciej Czaicki</h1>
-                        <p className="text-xl">Full-stack Developer</p>
+                        <h1 className="text-4xl font-bold text-primary mb-4">{t.home.title}</h1>
+                        <p className="text-xl">{t.home.subtitle}</p>
                         <div className="mt-8">
                             <ModeToggle/>
                             <ChangeLanguage/>
@@ -105,10 +105,10 @@ export default function Home() {
                     <motion.div
                         initial={{opacity: 0}}
                         whileInView={{opacity: 1}}
-                        transition={{duration: 0.8}}
-                        viewport={{once: true}}
+                        transition={{duration: 1}}
+                        viewport={{once: false}}
                     >
-                        <Projects/>
+                        <Projects />
                     </motion.div>
                 </section>
 
@@ -119,10 +119,10 @@ export default function Home() {
                     <motion.div
                         initial={{opacity: 0}}
                         whileInView={{opacity: 1}}
-                        transition={{duration: 0.8}}
-                        viewport={{once: true}}
+                        transition={{duration: 1}}
+                        viewport={{once: false}}
                     >
-                        <AboutMe/>
+                        <AboutMe />
                     </motion.div>
                 </section>
                 <section
@@ -132,10 +132,10 @@ export default function Home() {
                     <motion.div
                         initial={{opacity: 0}}
                         whileInView={{opacity: 1}}
-                        transition={{duration: 0.8}}
-                        viewport={{once: true}}
+                        transition={{duration: 1}}
+                        viewport={{once: false}}
                     >
-                        <ContactForm/>
+                        <ContactForm />
                     </motion.div>
                 </section>
             </main>
