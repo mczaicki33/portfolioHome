@@ -17,25 +17,30 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { sendEmail } from '@/app/actions'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
-import {ToastContainer, toast, Slide} from 'react-toastify';
-import {useThemeValue} from "@/components/theme/mode-toggle.tsx";
+import { ToastContainer, toast, Slide } from 'react-toastify'
+import { useThemeValue } from "@/components/theme/mode-toggle.tsx"
+import {translations} from "@/lang/translations.ts";
+import {useLanguage} from "@/lang/LanguageContext.tsx";
 
-const formSchema = z.object({
-    name: z.string().min(2, {
-        message: 'Name must be at least 2 characters.',
-    }),
-    email: z.string().email({
-        message: 'Please enter a valid email address.',
-    }),
-    message: z.string().min(8, {
-        message: 'Message must be at least 8 characters.',
-    }),
-})
+
 
 export function ContactForm() {
+
+    const { language } = useLanguage();
+    const t = translations[language].contact;
     const [isSubmitting, setIsSubmitting] = useState(false)
     const theme = useThemeValue()
-
+    const formSchema = z.object({
+        name: z.string().min(2, {
+            message: t.nameMinErr,
+        }),
+        email: z.string().email({
+            message: t.emailErr,
+        }),
+        message: z.string().min(8, {
+            message: t.msgMinErr,
+        }),
+    })
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -50,7 +55,7 @@ export function ContactForm() {
         try {
             await sendEmail(values)
             form.reset()
-            toast('Message sent successfully!', {
+            toast(t.success, {
                 position: "top-center",
                 autoClose: 2000,
                 hideProgressBar: true,
@@ -59,10 +64,10 @@ export function ContactForm() {
                 draggable: false,
                 progress: undefined,
                 theme: theme,
-                transition:Slide
+                transition: Slide
             });
         } catch {
-            toast.error('Message could not be sent!', {
+            toast.error(t.error, {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -71,7 +76,7 @@ export function ContactForm() {
                 draggable: true,
                 progress: undefined,
                 theme: theme,
-                transition:Slide
+                transition: Slide
             });
         } finally {
             setIsSubmitting(false)
@@ -81,8 +86,8 @@ export function ContactForm() {
     return (
         <Card className="w-full max-w-4xl mx-auto">
             <CardHeader>
-                <CardTitle className="text-2xl text-primary text-center">Contact Me</CardTitle>
-                <CardDescription className='text-center'>Send me a message and I'll get back to you as soon as possible.</CardDescription>
+                <CardTitle className="text-2xl text-primary text-center">{t.title}</CardTitle>
+                <CardDescription className='text-center'>{t.description}</CardDescription>
             </CardHeader>
             <CardContent>
                 <Form {...form}>
@@ -92,9 +97,9 @@ export function ContactForm() {
                             name="name"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Name</FormLabel>
+                                    <FormLabel>{t.name}</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Your name" {...field} />
+                                        <Input placeholder={t.name} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -105,9 +110,9 @@ export function ContactForm() {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>{t.email}</FormLabel>
                                     <FormControl>
-                                        <Input type="email" placeholder="Your email" {...field} />
+                                        <Input type="email" placeholder={t.email} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -118,10 +123,10 @@ export function ContactForm() {
                             name="message"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Message</FormLabel>
+                                    <FormLabel>{t.message}</FormLabel>
                                     <FormControl>
                                         <Textarea
-                                            placeholder="Your message"
+                                            placeholder={t.message}
                                             className="resize-none"
                                             {...field}
                                         />
@@ -140,7 +145,7 @@ export function ContactForm() {
                     onClick={form.handleSubmit(onSubmit)}
                     className="w-full"
                 >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? t.sending : t.send}
                 </Button>
             </CardFooter>
             <ToastContainer />

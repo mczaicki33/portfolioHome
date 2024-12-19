@@ -45,6 +45,9 @@ export const translations = {
             sending: 'Sending...',
             success: 'Message sent successfully!',
             error: 'Message could not be sent!',
+            nameMinErr:'Name must be at least 2 characters.',
+            emailErr:'Email is not valid.',
+            msgMinErr:'Message must be at least 8 characters.'
         },
     },
     pl: {
@@ -93,6 +96,9 @@ export const translations = {
             sending: 'Wysyłanie...',
             success: 'Wiadomość wysłana pomyślnie!',
             error: 'Nie udało się wysłać wiadomości!',
+            nameMinErr:'Imię musi zawierać co najmniej 2 znaki.',
+            emailErr:'Adres email jest nie poprawny.',
+            msgMinErr:'Wiadomość musi zawierać co najmniej 8 znaków.'
         },
     },
 };
