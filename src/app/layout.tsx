@@ -2,7 +2,6 @@ import '@/app/globals.css'
 import {ThemeProvider} from '@/components/theme/theme-provider'
 import {LanguageProvider} from '@/lang/LanguageContext'
 import React from "react";
-import {BackgroundSVG} from "@/components/BackgroundSVG.tsx";
 
 export default function RootLayout({
                                        children,

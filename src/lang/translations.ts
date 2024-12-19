@@ -9,6 +9,7 @@ export const translations = {
             projects: 'Projects',
             about: 'About',
             contact: 'Contact',
+            skills: 'Skills & Technologies',
         },
         about: {
             title: 'About me',
@@ -19,7 +20,6 @@ export const translations = {
                 "I’m driven by a passion for learning and a commitment to delivering high-quality solutions. I thrive in environments where innovation and problem-solving are at the forefront.",
                 "Feel free to reach out to discuss how I can contribute to your projects or team!"
             ],
-            skills: "Skills",
             languages: "Languages",
             polish: "Polish",
             english: "English",
@@ -57,6 +57,7 @@ export const translations = {
             projects: 'Projekty',
             about: 'O mnie',
             contact: 'Kontakt',
+            skills: "Umiejętności i technologie",
         },
         about: {
             title: 'O mnie',
@@ -67,7 +68,6 @@ export const translations = {
                 "Uwielbiam zdobywać nową wiedzę i podchodzić do każdego projektu z zaangażowaniem, dążąc do najwyższej jakości. Najlepiej odnajduję się tam, gdzie liczy się kreatywność i rozwiązywanie problemów.",
                 "Jeśli szukasz osoby, która wniesie wartość do Twojego zespołu lub projektu, śmiało się ze mną skontaktuj!",
             ],
-            skills: "Umiejętności",
             languages: "Języki",
             polish:"Polski",
             english: "Angielski",
