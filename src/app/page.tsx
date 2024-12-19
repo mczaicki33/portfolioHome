@@ -68,7 +68,7 @@ export default function Home() {
                             <li key={section}>
                                 <button
                                     onClick={() => scrollToSection(section)}
-                                    className={`text-lg font-medium transition-colors ${
+                                    className={`md:text-lg text-sm font-medium transition-colors ${
                                         activeSection === section ? 'text-primary' : 'text-foreground hover:text-primary/80'
                                     }`}
                                 >
@@ -166,7 +166,8 @@ const ProjectsSection = motion(React.forwardRef<HTMLElement, { projects: React.R
 
         const setRefs = useCallback(
             (node: HTMLElement | null) => {
-                // @ts-ignore
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 ref(node);
                 inViewRef(node);
             },
@@ -202,7 +203,8 @@ const AboutSection = motion(React.forwardRef<HTMLElement, { about: React.ReactNo
 
         const setRefs = useCallback(
             (node: HTMLElement | null) => {
-                // @ts-ignore
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 ref(node);
                 inViewRef(node);
             },
@@ -237,7 +239,8 @@ const SkillsSection = motion(React.forwardRef<HTMLElement, { skills: React.React
 
         const setRefs = useCallback(
             (node: HTMLElement | null) => {
-                // @ts-ignore
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 ref(node);
                 inViewRef(node);
             },
@@ -272,7 +275,8 @@ const ContactSection = motion(React.forwardRef<HTMLElement, { contact: React.Rea
 
         const setRefs = useCallback(
             (node: HTMLElement | null) => {
-                // @ts-ignore
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 ref(node);
                 inViewRef(node);
             },

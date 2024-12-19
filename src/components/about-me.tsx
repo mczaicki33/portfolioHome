@@ -25,7 +25,7 @@ export function AboutMe() {
                             <h3 className="font-semibold mb-2 text-center flex flex-row justify-evenly">{t.about.cv} <LucideFileUser/></h3>
                             <ul>
                                 <li>
-                                    <Button asChild size="lg">
+                                    <Button asChild>
                                         <a href="https://github.com/haearnbleidd" className="text-primary">
                                             {t.about.download}
                                         </a>
@@ -37,7 +37,7 @@ export function AboutMe() {
                             <h3 className="font-semibold mb-2 text-center flex flex-row justify-evenly">Github <SiGithub/></h3>
                             <ul>
                                 <li>
-                                    <Button asChild size="lg">
+                                    <Button asChild>
                                         <a href="https://github.com/haearnbleidd" className="text-primary">
                                             {t.about.redirect}
                                         </a>
@@ -49,7 +49,7 @@ export function AboutMe() {
                             <h3 className="font-semibold mb-2 text-center flex flex-row justify-evenly">LinkedIn<SiLinkedin/></h3>
                             <ul>
                                 <li>
-                                    <Button asChild size="lg">
+                                    <Button asChild>
                                         <a href="https://github.com/haearnbleidd" className="text-primary">
                                             {t.about.redirect}
                                         </a>
