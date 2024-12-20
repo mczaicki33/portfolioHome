@@ -29,7 +29,7 @@ export function Projects() {
             title: t.projects.socialMediaPlatform,
             icon: <XIcon className="w-16 h-16" />,
             technologies: 'Stack: React, Tailwind CSS',
-            link: '/x',
+            link: 'https://mczaicki-x.vercel.app/',
         },
         {
             title: t.projects.carRental,

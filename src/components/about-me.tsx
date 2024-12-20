@@ -19,7 +19,7 @@ export function AboutMe() {
                 {t.about.intro.map((el) => <p className='font-semibold leading-tight'>{el}</p>)}
                 <p className='font-semibold leading-tight'></p>
                 <div>
-                    <h3 className="text-xl font-semibold text-primary mb-4">{t.about.links}</h3>
+                    <h3 className="text-xl font-semibold text-center text-primary mb-4">{t.about.links}</h3>
                     <div className="flex flex-row gap-8 justify-evenly">
                         <div>
                             <h3 className="font-semibold mb-2 text-center flex flex-row justify-evenly">{t.about.cv} <LucideFileUser/></h3>
