@@ -255,7 +255,7 @@ const SkillsSection = motion(React.forwardRef<HTMLElement, { skills: React.React
         return (
             <motion.section
                 ref={setRefs}
-                className="min-h-screen py-16 relative"
+                className="min-h-1/2 py-16 relative"
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={variants}
